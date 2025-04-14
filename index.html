@@ -35,9 +35,69 @@
 <body>
   <h1>Checklist Diagnóstico - PlantScanner</h1>
 
-  <!-- SEÇÕES DO CHECKLIST... (mantidas como estão) -->
+  <!-- SEÇÕES DO CHECKLIST -->
 
-  <!-- ... todas as seções que você já tinha ... -->
+  <div class="section">
+    <h2>🔧 1. Planejamento</h2>
+    <label><input type="checkbox" class="planejamento"> Não tem responsável definido</label>
+    <label><input type="checkbox" class="planejamento"> Planejamento baseado em feeling</label>
+    <label><input type="checkbox" class="planejamento"> Operadores não sabem o que fazer</label>
+    <div class="diagnostico" id="planejamento-diagnostico">
+      ➡️ Mostrar o fluxo de criação de ordens, agendamento e visibilidade no chão de fábrica.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🏭 2. Produção</h2>
+    <label><input type="checkbox" class="producao"> Não sabe o que está sendo produzido em tempo real</label>
+    <label><input type="checkbox" class="producao"> Registros são manuais</label>
+    <label><input type="checkbox" class="producao"> Não sabe quando uma ordem foi finalizada</label>
+    <div class="diagnostico" id="producao-diagnostico">
+      ➡️ Mostrar dashboard, rastreabilidade e registro automático com login do operador.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🚚 3. Logística / Materiais</h2>
+    <label><input type="checkbox" class="logistica"> Já teve parada por falta de matéria-prima</label>
+    <label><input type="checkbox" class="logistica"> Equipe sem visibilidade do que preparar</label>
+    <label><input type="checkbox" class="logistica"> Não usa apontamento de consumo</label>
+    <div class="diagnostico" id="logistica-diagnostico">
+      ➡️ Apresentar alertas de falta, integração com ERP, sinalização para almoxarifado.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🛠 4. Manutenção</h2>
+    <label><input type="checkbox" class="manutencao"> Já teve parada inesperada</label>
+    <label><input type="checkbox" class="manutencao"> Não tem controle de preventivas</label>
+    <label><input type="checkbox" class="manutencao"> Problemas não são registrados</label>
+    <div class="diagnostico" id="manutencao-diagnostico">
+      ➡️ Mostrar módulo de manutenção com checklists, históricos e alertas automáticos.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✅ 5. Qualidade</h2>
+    <label><input type="checkbox" class="qualidade"> Não sabe se o produto está conforme</label>
+    <label><input type="checkbox" class="qualidade"> Registros manuais de inspeção</label>
+    <label><input type="checkbox" class="qualidade"> Não rastreia defeitos por lote</label>
+    <div class="diagnostico" id="qualidade-diagnostico">
+      ➡️ Mostrar checks de qualidade por ordem, por processo ou por lote.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📊 6. Indicadores</h2>
+    <label><input type="checkbox" class="indicadores"> Não tem metas claras</label>
+    <label><input type="checkbox" class="indicadores"> Não mede produtividade/retrabalho</label>
+    <label><input type="checkbox" class="indicadores"> Decisões não são baseadas em dados</label>
+    <div class="diagnostico" id="indicadores-diagnostico">
+      ➡️ Mostrar dashboards, gráficos por operador, por máquina, por produto, etc.
+    </div>
+  </div>
+
+  <!-- ... todas as seções ... -->
 
   <script>
     // Mostra diagnóstico se houver checkbox marcado
