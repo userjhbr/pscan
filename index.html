@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnóstico PlantScanner</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2d89ef">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      max-width: 800px;
+    }
+    h2 {
+      margin-top: 40px;
+    }
+    .section {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .diagnostico {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #007b00;
+      display: none;
+    }
+    label {
+      display: block;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Checklist Diagnóstico - PlantScanner</h1>
+
+  <!-- SEÇÕES DO CHECKLIST... (mantidas como estão) -->
+
+  <!-- ... todas as seções que você já tinha ... -->
+
+  <script>
+    // Mostra diagnóstico se houver checkbox marcado
+    const categorias = ["planejamento", "producao", "logistica", "manutencao", "qualidade", "indicadores"];
+    categorias.forEach(cat => {
+      const checkboxes = document.querySelectorAll(`input.${cat}`);
+      const diagnostico = document.getElementById(`${cat}-diagnostico`);
+
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+          const algumMarcado = Array.from(checkboxes).some(c => c.checked);
+          diagnostico.style.display = algumMarcado ? 'block' : 'none';
+        });
+      });
+    });
+
+    // REGISTRO DO SERVICE WORKER
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('service-worker.js').then(function (registration) {
+          console.log('Service Worker registrado com sucesso:', registration.scope);
+        }, function (err) {
+          console.log('Falha ao registrar o Service Worker:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
